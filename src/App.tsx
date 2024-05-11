@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import TodoList from "./pages/todo";
+import Login2 from "./pages/login2";
+import Register from "./pages/register";
+import Dashboard from "./pages/Dashboard";
+import Add_activity from "./pages/Add_activity";
+import BigCalender from "./pages/Calender.tsx";
+import Completed from "./pages/Completed_tasks";
+import AddReminders from "./pages/Reminders.tsx";
+import Task_summary from "./pages/Summary";
+import Sidebar from "./components/Sidebar";
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    
+      <Routes>
+        <Route path="/" element={< TodoList />} />
+        <Route path="/login" element={< Login2 />} />
+        <Route path="/register" element={< Register />} />
+        <Route path="/calender" element={< BigCalender />} />
+        <Route path="/reminder" element={< AddReminders />} />
+        <Route element={<Sidebar children={undefined}/>}>
+          <Route path="/dashboard" element={< Dashboard />} />
+          <Route path="/list" element={< Add_activity />} />
+          
+          <Route path="/completed-task" element={< Completed />} />
+          
+          <Route path="/task-summary" element={< Task_summary />} />
+        </Route>
+
+      </Routes>
+
   )
 }
-
-export default App

@@ -1,0 +1,57 @@
+body{
+    font-family: 'Ariel',sans-serif;
+    background-color: #eaeaea;
+    
+}
+.container3{
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    padding: 1px 20px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label,
+input,
+button{
+    margin: 10px 0;
+    box-sizing: border-box;
+
+}
+input{
+    width: 100%;
+    margin-top: 5px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th,
+td{
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+th{
+    background-color: #2980b9;
+    color: white;
+}
+.reminderbutton{
+    background-color: #2980b9;
+    color: white;
+    padding: 5px;
+    border: none;
+    width: 100%;
+}
+button:hover{
+    background-color: #2980b9;
+}
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    color: black; /* Text color */
+    border: 1px solid #ccc; /* Border */
+    /* Add any other styles you want */
+}
